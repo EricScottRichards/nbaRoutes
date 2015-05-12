@@ -11,13 +11,13 @@ app.controller('teamCtrl', function($scope, $routeParams, teamService, teamData)
 
 	if($routeParams.team === 'utahjazz'){
 		$scope.homeTeam = 'Utah Jazz';
-		$scope.logopath = 'images/jazz-logo.png';
+		$scope.logoPath = 'images/jazz-logo.png';
 	} else if($routeParams.team === 'losangeleslakers'){
 		$scope.homeTeam = 'Los Angeles Lakers';
-		$scope.logopath = 'images/lakers-logo.png';
+		$scope.logoPath = 'images/lakers-logo.png';
 	} else if($routeParams.team === 'miamiheat'){
 		$scope.homeTeam = 'Miami Heat';
-		$scope.logopath = 'images/heat-logo.png'
+		$scope.logoPath = 'images/heat-logo.png'
 	}
 
 	$scope.submitGame = function(){
@@ -26,10 +26,13 @@ app.controller('teamCtrl', function($scope, $routeParams, teamService, teamData)
 			.then(function(){
 				teamService.getTeamData($scope.newGame.homeTeam)
 					.then(function(data){
+						console.log(data);
 						$scope.teamData = data;
 						$scope.newGame = {};
 						$scope.showNewGameForm = false;
 					})
 			})
 	}
+
+	console.log($scope.teamData);
 });
