@@ -2,17 +2,40 @@
 	<div class="team-container">
 		<img src="images/jazz-logo.png" />
 		<h4>Utah Jazz</h4>
-		<h4>Wins: {{}}</h4>
+		<h4>Wins: {{jazzData.wins}}  Losses: {{jazzData.losses}}</h4>
+		<div>
+			<div class="game" ng-repeat="game in jazzData">
+				Date: {{game.createdAt | date}} <br/>
+				{{jazzData.homeTeam}} - {{games.homeTeamScore}} <br/>
+				{{game.opponent}} - {{game.opponentScore}}
+			</div>
+		</div>
 		
 	</div>
 
 	<div class="team-container">
 		<img src="images/lakers-logo.png" />
 		<h4>Los Angeles Lakers</h4>
+		<h4>Wins: {{lakersData.wins}}  Losses: {{lakersData.losses}}</h4>
+		<div>
+			<div class="game" ng-repeat="game in lakersData">
+				Date: {{game.createdAt | date}} <br/>
+				{{lakersData.homeTeam}} - {{game.homeTeamScore}} <br>
+				{{game.opponent}} - {{game.opponentScore}}
+			</div>
+		</div>
 	</div>
 
 	<div class="team-container">
-		<img src="images/heat-logo/png /">
+		<img src="images/heat-logo.png" />
 		<h4>Miami Heat</h4>
+		<h4>Wins: {{heatData.wins}}  Losses: {{heatData.losses}}</h4>
+		<div>
+			<div class="game" ng-repeat="game in heatData">
+				Date: {{game.createdAt | date}} <br/>
+				{{heatData.homeTeam}} - {{game.homeTeamScore}}
+				{{game.opponent}} - {{game.opponentScore}}
+			</div>
+		</div>
 	</div>
 </div>
